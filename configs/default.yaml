@@ -1,0 +1,16 @@
+seed: 42
+fps: 30
+num_workers: 0
+video_glob: "**/*.mp4"
+landmark_dtype: "float32"
+# Output control
+save_debug_plots: false
+
+paths:
+  data_root: "data"
+  raw: "data/raw"
+  interim: "data/interim"
+  landmarks: "data/landmarks"
+  processed: "data/processed"
+  metadata: "data/metadata"
+  logs: "outputs/logs"

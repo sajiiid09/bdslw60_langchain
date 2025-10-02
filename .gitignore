@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+.venv/
+.env
+
+# Data & outputs
+data/interim/
+outputs/
+!outputs/logs/.gitkeep
+!outputs/predictions/.gitkeep
+!outputs/reports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/

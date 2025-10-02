@@ -1,0 +1,20 @@
+dataset_name: BdSLW60
+labels_csv: "data/raw/labels.csv"
+# Expected columns: [video_path, label, signer_id]
+label_column: "label"
+video_column: "video_path"
+signer_column: "signer_id"
+
+data:
+  videos_path: "src/data/videos/"
+
+splits:
+  train_signers: []  # optional: list of signer ids
+  val_signers: []
+  test_signers: []
+
+# Optional fixed splits files (if provided, override signer lists)
+predefined_splits:
+  train_list: null  # path to txt/csv with video paths or ids
+  val_list: null
+  test_list: null

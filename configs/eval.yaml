@@ -1,0 +1,40 @@
+metrics:
+  # Classification metrics
+  accuracy: true
+  top_k_accuracy: [1, 3, 5]
+  
+  # Sequence metrics (for sign language recognition)
+  wer: true  # Word Error Rate
+  bleu: true  # BLEU score
+  edit_distance: true
+  
+  # Additional metrics
+  confusion_matrix: true
+  per_class_accuracy: true
+  f1_score: true
+  precision_recall: true
+
+evaluation:
+  # Evaluation settings
+  batch_size: 16
+  num_workers: 4
+  
+  # Output settings
+  save_predictions: true
+  save_attention_weights: false
+  generate_reports: true
+  
+  # Visualization
+  plot_confusion_matrix: true
+  plot_attention_heatmaps: false
+  plot_sequence_visualizations: false
+
+output:
+  # Report formats
+  formats: ["json", "csv", "html"]
+  
+  # Report content
+  include_predictions: true
+  include_metrics: true
+  include_visualizations: true
+  include_model_info: true
