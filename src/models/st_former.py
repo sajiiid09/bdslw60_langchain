@@ -28,13 +28,24 @@ class STFormer(nn.Module):
                  classifier_dropout: float = 0.1):
         super().__init__()
         
-        self.patch_size = patch_size
-        self.num_frames = num_frames
-        self.hidden_size = hidden_size
-        self.num_classes = num_classes
-        self.spatial_attention = spatial_attention
-        self.temporal_attention = temporal_attention
-        self.cross_attention = cross_attention
+        # Coerce numeric types from YAML to avoid strings
+        self.patch_size = int(patch_size)
+        self.num_frames = int(num_frames)
+        self.hidden_size = int(hidden_size)
+        self.num_classes = int(num_classes)
+        self.spatial_attention = bool(spatial_attention)
+        self.temporal_attention = bool(temporal_attention)
+        self.cross_attention = bool(cross_attention)
+        hidden_dropout_prob = float(hidden_dropout_prob)
+        attention_probs_dropout_prob = float(attention_probs_dropout_prob)
+        initializer_range = float(initializer_range)
+        layer_norm_eps = float(layer_norm_eps)
+        num_attention_heads = int(num_attention_heads)
+        num_hidden_layers = int(num_hidden_layers)
+        intermediate_size = int(intermediate_size)
+        input_channels = int(input_channels)
+        image_size = int(image_size)
+        classifier_dropout = float(classifier_dropout)
         
         # Patch embedding
         self.patch_embed = nn.Conv3d(

@@ -1,0 +1,142 @@
+Metadata-Version: 2.4
+Name: bdsl-llm-correction
+Version: 0.1.0
+Summary: BdSLW60 Sign Language Recognition with LLM Correction
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/bdsl-llm-correction
+Project-URL: Repository, https://github.com/yourusername/bdsl-llm-correction
+Project-URL: Documentation, https://github.com/yourusername/bdsl-llm-correction#readme
+Project-URL: Bug Tracker, https://github.com/yourusername/bdsl-llm-correction/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: opencv-python>=4.8
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: tqdm>=4.66
+Requires-Dist: torch>=2.1
+Requires-Dist: scipy>=1.11
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: seaborn>=0.12
+Requires-Dist: tensorboard>=2.13
+Requires-Dist: flask>=2.3
+Requires-Dist: werkzeug>=2.3
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Requires-Dist: black>=23.7; extra == "dev"
+Requires-Dist: ruff>=0.0.284; extra == "dev"
+Requires-Dist: mypy>=1.5; extra == "dev"
+Requires-Dist: pre-commit>=3.3; extra == "dev"
+Dynamic: license-file
+
+# BdSLW60 Preprocessing (Pose -> RQE Sequences)
+
+This project preprocesses BdSLW60 videos for Bangla Sign Language recognition by:
+- Extracting MediaPipe Holistic pose landmarks (face, hands, body)
+- Normalizing video frame rate
+- Applying Relative Quantization Encoding (RQE)
+- Emitting ready-to-train sequences
+
+No LLM/GPT correction is included in this phase.
+
+## Quickstart
+
+1) Create environment
+
+```bash
+# Conda (recommended)
+conda env create -f environment.yml
+conda activate bdsl-pre
+
+# or with pip
+python -m venv .venv
+. .venv/Scripts/activate  # on Windows PowerShell: .venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+2) Configure paths in `configs/data_bdslw60.yaml` and defaults in `configs/default.yaml`.
+
+3) Verify dataset structure (optional):
+
+```bash
+python scripts/prepare_bdslw60.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+```
+
+4) Extract pose landmarks to `data/landmarks/`:
+
+```bash
+python scripts/extract_pose.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+```
+
+5) Build RQE-encoded sequences into `data/processed/`:
+
+```bash
+python scripts/build_sequences.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+```
+
+6) Load processed data later for training via `src/data/bdslw60.py` and `src/data/collate.py`.
+
+## How to run
+
+- With Make:
+
+```bash
+make setup
+make prepare
+make extract
+make build
+make train MODEL=videomae
+make evaluate CHECKPOINT=outputs/experiments/videomae_run/checkpoints/best_model.pth
+make predict CHECKPOINT=outputs/experiments/videomae_run/checkpoints/best_model.pth INPUT=data/raw/path/to/video.mp4
+make demo CHECKPOINT=outputs/experiments/videomae_run/checkpoints/best_model.pth
+```
+
+- Without Make (Windows-safe):
+
+```bash
+# Prepare
+python scripts/prepare_bdslw60.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+# Extract pose
+python scripts/extract_pose.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+# Build sequences (RQE)
+python scripts/build_sequences.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml
+# Train
+python scripts/train.py --config configs/default.yaml --data-config configs/data_bdslw60.yaml --model-config configs/model_videomae.yaml --output-dir outputs/experiments/videomae_run
+# Evaluate
+python scripts/evaluate.py --checkpoint outputs/experiments/videomae_run/checkpoints/best_model.pth --model-config configs/model_videomae.yaml --data-config configs/data_bdslw60.yaml --config configs/default.yaml --output outputs/reports/eval_videomae.json
+# Predict
+python scripts/predict.py --checkpoint outputs/experiments/videomae_run/checkpoints/best_model.pth --model-config configs/model_videomae.yaml --input data/raw/path/to/video.mp4 --output outputs/predictions/predictions.json
+# Demo server
+python scripts/demo_server.py --checkpoint outputs/experiments/videomae_run/checkpoints/best_model.pth --model-config configs/model_videomae.yaml --port 5000
+```
+
+## Layout
+
+Key directories:
+- `data/raw/`: original BdSLW60 videos and labels CSV
+- `data/landmarks/`: extracted holistic landmarks (`.npz` per video)
+- `data/processed/`: RQE sequences (`.npz` per sample)
+- `data/metadata/`: label maps, splits
+
+## Notes
+- MediaPipe Holistic returns up to 543 landmarks per frame (468 face, 33 pose, 21 LH, 21 RH). We export normalized x,y (0..1), z in image-depth units (as provided by MediaPipe), filling missing parts with NaN.
+- FPS normalization uses linear time resampling to the target FPS.
+- RQE discretizes relative frame-to-frame deltas into integer codes; metadata is stored alongside outputs.
+
+## License
+MIT

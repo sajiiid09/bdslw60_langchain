@@ -74,27 +74,27 @@ def create_scheduler(optimizer: torch.optim.Optimizer, config: Dict[str, Any]) -
     if scheduler_name == "cosine":
         scheduler = CosineAnnealingLR(
             optimizer,
-            T_max=config.get("num_epochs", 100),
-            eta_min=config.get("min_lr", 1e-6)
+            T_max=int(config.get("num_epochs", 100)),
+            eta_min=float(config.get("min_lr", 1e-6))
         )
     elif scheduler_name == "step":
         scheduler = StepLR(
             optimizer,
-            step_size=config.get("step_size", 30),
-            gamma=config.get("gamma", 0.1)
+            step_size=int(config.get("step_size", 30)),
+            gamma=float(config.get("gamma", 0.1))
         )
     elif scheduler_name == "exponential":
         scheduler = ExponentialLR(
             optimizer,
-            gamma=config.get("gamma", 0.95)
+            gamma=float(config.get("gamma", 0.95))
         )
     elif scheduler_name == "plateau":
         scheduler = ReduceLROnPlateau(
             optimizer,
             mode=config.get("mode", "min"),
-            factor=config.get("factor", 0.5),
-            patience=config.get("patience", 10),
-            min_lr=config.get("min_lr", 1e-6)
+            factor=float(config.get("factor", 0.5)),
+            patience=int(config.get("patience", 10)),
+            min_lr=float(config.get("min_lr", 1e-6))
         )
     else:
         raise ValueError(f"Unknown scheduler: {scheduler_name}")

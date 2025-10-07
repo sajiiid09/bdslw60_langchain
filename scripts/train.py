@@ -46,18 +46,48 @@ def main():
     
     logger.info(f"Using device: {device}")
     
-    # Create model
+    # Create datasets first (needed to infer feature dims for adapters)
+    processed_root = config["paths"]["processed"]
+    # For now, use all data as training set since we don't have splits
+    train_dataset = BdSLW60ProcessedDataset(processed_root)
+    val_dataset = BdSLW60ProcessedDataset(processed_root)  # Same as train for now
+
+    # Infer input feature dimension (T, D) from first item for sequence-based adapters
+    try:
+        sample_item = train_dataset[0]
+        feature_dim = int(sample_item["input"].shape[1])
+    except Exception:
+        feature_dim = None
+
+    # Create model (handle special adapters that need feature_dim)
+    model_cfg = model_config["model"]
+    if model_cfg.get("name", "").lower() == "videomae_from_codes":
+        if feature_dim is None:
+            raise RuntimeError("Could not infer input feature dimension from dataset for videomae_from_codes.")
+        # Build videomae backbone kwargs from model config
+        videomae_keys = [
+            "patch_size","num_frames","tubelet_size","hidden_size","num_hidden_layers",
+            "num_attention_heads","intermediate_size","hidden_act","hidden_dropout_prob",
+            "attention_probs_dropout_prob","initializer_range","layer_norm_eps","input_channels",
+            "image_size","num_classes","classifier_dropout"
+        ]
+        videomae_kwargs = {k: v for k, v in model_cfg.items() if k in videomae_keys}
+        # Adapter params (optional)
+        adapter_params = {k: v for k, v in model_cfg.items() if k.startswith("adapter_")}
+        # Assemble final params for factory
+        model_params = {
+            "input_feature_dim": feature_dim,
+            "videomae_kwargs": videomae_kwargs,
+            **adapter_params,
+        }
+        # Replace model section to pass only necessary keys
+        model_config["model"] = {"name": "videomae_from_codes", **model_params}
+    
     model = create_model(model_config["model"])
     model = model.to(device)
     
     # Log model info
     log_model_info(logger, model, model_config)
-    
-    # Create datasets
-    processed_root = config["paths"]["processed"]
-    # For now, use all data as training set since we don't have splits
-    train_dataset = BdSLW60ProcessedDataset(processed_root)
-    val_dataset = BdSLW60ProcessedDataset(processed_root)  # Same as train for now
     
     # Create data loaders
     train_loader = DataLoader(

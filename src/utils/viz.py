@@ -1,8 +1,21 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
+import os
 import numpy as np
 from typing import List, Dict, Any, Optional
-import os
+
+# Defer heavy plotting imports to inside functions to avoid backend issues
+plt = None
+sns = None
+import numpy as np
+def _ensure_backends():
+    global plt, sns
+    if plt is None:
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt_mod
+        plt = plt_mod
+    if sns is None:
+        import seaborn as sns_mod
+        sns = sns_mod
 
 
 def plot_confusion_matrix(y_true: np.ndarray, y_pred: np.ndarray, 
@@ -11,6 +24,7 @@ def plot_confusion_matrix(y_true: np.ndarray, y_pred: np.ndarray,
                          title: str = "Confusion Matrix") -> None:
     """Plot confusion matrix."""
     from sklearn.metrics import confusion_matrix
+    _ensure_backends()
     
     cm = confusion_matrix(y_true, y_pred)
     
@@ -26,13 +40,15 @@ def plot_confusion_matrix(y_true: np.ndarray, y_pred: np.ndarray,
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    plt.show()
+    # Do not show in headless evaluation
+    plt.close()
 
 
 def plot_attention_heatmap(attention_weights: np.ndarray, 
                           save_path: Optional[str] = None,
                           title: str = "Attention Weights") -> None:
     """Plot attention weights heatmap."""
+    _ensure_backends()
     plt.figure(figsize=(10, 8))
     sns.heatmap(attention_weights, cmap='viridis', cbar=True)
     plt.title(title)
@@ -44,13 +60,14 @@ def plot_attention_heatmap(attention_weights: np.ndarray,
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    plt.show()
+    plt.close()
 
 
 def plot_training_curves(train_losses: List[float], val_losses: List[float],
                         train_accuracies: List[float], val_accuracies: List[float],
                         save_path: Optional[str] = None) -> None:
     """Plot training curves."""
+    _ensure_backends()
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
     
     # Loss curves
@@ -77,7 +94,7 @@ def plot_training_curves(train_losses: List[float], val_losses: List[float],
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    plt.show()
+    plt.close()
 
 
 def plot_sequence_visualization(sequence: np.ndarray, 
@@ -85,6 +102,7 @@ def plot_sequence_visualization(sequence: np.ndarray,
                                save_path: Optional[str] = None,
                                title: str = "Sequence Visualization") -> None:
     """Visualize sequence with optional attention weights."""
+    _ensure_backends()
     fig, ax = plt.subplots(figsize=(12, 8))
     
     # Plot sequence
@@ -111,7 +129,7 @@ def plot_sequence_visualization(sequence: np.ndarray,
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    plt.show()
+    plt.close()
 
 
 def plot_landmark_visualization(landmarks: np.ndarray, 
@@ -119,6 +137,7 @@ def plot_landmark_visualization(landmarks: np.ndarray,
                                save_path: Optional[str] = None,
                                title: str = "Landmark Visualization") -> None:
     """Visualize landmarks for a specific frame."""
+    _ensure_backends()
     if landmarks.ndim != 2:
         raise ValueError("Landmarks must be 2D array (num_landmarks, 3)")
     
@@ -147,5 +166,5 @@ def plot_landmark_visualization(landmarks: np.ndarray,
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    plt.show()
+    plt.close()
 

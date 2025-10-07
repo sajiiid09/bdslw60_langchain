@@ -50,12 +50,34 @@ class SignLanguagePredictor:
     
     def _load_model(self, model_path: str, model_config: Dict[str, Any]) -> nn.Module:
         """Load trained model."""
-        # Create model
-        model = create_model(model_config)
+        # Create model (support both full config with 'model' section or flat)
+        cfg = model_config.get("model", model_config)
+        model = create_model(cfg)
         
         # Load checkpoint
         checkpoint = torch.load(model_path, map_location=self.device)
-        model.load_state_dict(checkpoint["model_state_dict"])
+
+        # If adapter model, ensure adapter is initialized before loading state dict
+        try:
+            from ..models.videomae_adapter import VideoMAEFromCodes
+            if isinstance(model, VideoMAEFromCodes):
+                # Try to recover feature dim from checkpoint metadata
+                feature_dim = None
+                if "train_metrics" in checkpoint and "val_metrics" in checkpoint:
+                    # no direct feature dim; attempt from config if saved
+                    pass
+                # Fallback: infer from first linear weight if present in state dict
+                sd = checkpoint.get("model_state_dict", {})
+                proj_w = sd.get("adapter.project_features.weight", None)
+                if proj_w is not None:
+                    # shape: (C*h*w, D)
+                    feature_dim = int(proj_w.shape[1])
+                if feature_dim is not None and getattr(model, "adapter", None) is None:
+                    model.init_adapter(feature_dim)
+        except Exception:
+            pass
+        
+        model.load_state_dict(checkpoint["model_state_dict"], strict=False)
         
         # Move to device
         model = model.to(self.device)

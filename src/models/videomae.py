@@ -26,11 +26,22 @@ class VideoMAE(nn.Module):
                  classifier_dropout: float = 0.1):
         super().__init__()
         
-        self.patch_size = patch_size
-        self.num_frames = num_frames
-        self.tubelet_size = tubelet_size
-        self.hidden_size = hidden_size
-        self.num_classes = num_classes
+        # Coerce numeric types to avoid YAML string parsing issues
+        self.patch_size = int(patch_size)
+        self.num_frames = int(num_frames)
+        self.tubelet_size = int(tubelet_size)
+        self.hidden_size = int(hidden_size)
+        self.num_classes = int(num_classes)
+        hidden_dropout_prob = float(hidden_dropout_prob)
+        attention_probs_dropout_prob = float(attention_probs_dropout_prob)
+        initializer_range = float(initializer_range)
+        layer_norm_eps = float(layer_norm_eps)
+        classifier_dropout = float(classifier_dropout)
+        num_attention_heads = int(num_attention_heads)
+        num_hidden_layers = int(num_hidden_layers)
+        intermediate_size = int(intermediate_size)
+        input_channels = int(input_channels)
+        image_size = int(image_size)
         
         # Patch embedding
         self.patch_embed = nn.Conv3d(

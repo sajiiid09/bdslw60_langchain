@@ -1,7 +1,7 @@
 numpy>=1.24
 pandas>=2.0
 opencv-python>=4.8
-mediapipe>=0.10
+# mediapipe>=0.10  # Optional - will use mock if not available
 PyYAML>=6.0
 tqdm>=4.66
 torch>=2.1

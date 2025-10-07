@@ -9,8 +9,31 @@ def compute_accuracy(predictions: np.ndarray, targets: np.ndarray) -> float:
 
 
 def compute_top_k_accuracy(predictions: np.ndarray, targets: np.ndarray, k: int = 5) -> float:
-    """Compute top-k accuracy score."""
-    return top_k_accuracy_score(targets, predictions, k=k)
+    """Compute top-k accuracy score.
+
+    Accepts either (y_score, y_true) or (y_true, y_score) order and fixes it.
+    - y_true: shape (N,)
+    - y_score: shape (N, C)
+    """
+    pred_ndim = np.ndim(predictions)
+    targ_ndim = np.ndim(targets)
+
+    # Determine which arg is y_true vs y_score based on dimensionality
+    if pred_ndim == 2 and targ_ndim == 1:
+        y_score = predictions
+        y_true = targets
+    elif pred_ndim == 1 and targ_ndim == 2:
+        y_score = targets
+        y_true = predictions
+    else:
+        # Fall back to sklearn error for invalid shapes
+        y_true = targets
+        y_score = predictions
+
+    # Ensure labels cover the full class space even if y_true contains a subset
+    num_classes = y_score.shape[1]
+    labels = np.arange(num_classes)
+    return top_k_accuracy_score(y_true, y_score, k=k, labels=labels)
 
 
 def compute_wer(predictions: List[str], targets: List[str]) -> float:

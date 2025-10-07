@@ -25,7 +25,7 @@ evaluation:
   generate_reports: true
   
   # Visualization
-  plot_confusion_matrix: true
+  plot_confusion_matrix: false
   plot_attention_heatmaps: false
   plot_sequence_visualizations: false
 
@@ -36,5 +36,5 @@ output:
   # Report content
   include_predictions: true
   include_metrics: true
-  include_visualizations: true
+  include_visualizations: false
   include_model_info: true

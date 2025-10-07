@@ -4,6 +4,7 @@ import json
 import torch
 import numpy as np
 from torch.utils.data import DataLoader
+from tqdm import tqdm
 
 from src.inference.predictor import SignLanguagePredictor, load_predictor_from_checkpoint
 from src.data.bdslw60 import BdSLW60ProcessedDataset
@@ -25,7 +26,8 @@ def main():
     parser.add_argument("--output", required=True, help="Path to output evaluation results")
     parser.add_argument("--device", default="auto", help="Device to use (auto, cpu, cuda)")
     parser.add_argument("--batch-size", type=int, default=16, help="Batch size for evaluation")
-    parser.add_argument("--split", default="test", help="Dataset split to evaluate (train, val, test)")
+    # Split not supported by BdSLW60ProcessedDataset; kept for compatibility but unused
+    parser.add_argument("--split", default="all", help="Dataset split to evaluate (unused)")
     args = parser.parse_args()
     
     # Load configs
@@ -42,9 +44,9 @@ def main():
     
     print(f"Loaded model: {predictor.get_model_info()}")
     
-    # Create dataset
+    # Create dataset (no split support; evaluate on full processed dataset)
     processed_root = config["paths"]["processed"]
-    dataset = BdSLW60ProcessedDataset(processed_root, split=args.split)
+    dataset = BdSLW60ProcessedDataset(processed_root)
     
     # Create data loader
     dataloader = DataLoader(
@@ -59,6 +61,7 @@ def main():
     all_predictions = []
     all_targets = []
     all_confidences = []
+    all_probabilities = []
     
     print(f"Evaluating on {args.split} split...")
     
@@ -74,6 +77,8 @@ def main():
             all_predictions.append(result["predicted_class"])
             all_targets.append(targets[i].item())
             all_confidences.append(result["confidence"])
+            if "probabilities" in result:
+                all_probabilities.append(np.array(result["probabilities"]))
     
     # Convert to numpy arrays
     predictions = np.array(all_predictions)
@@ -92,9 +97,10 @@ def main():
     if eval_config["metrics"]["accuracy"]:
         results["metrics"]["accuracy"] = compute_accuracy(predictions, targets)
     
-    if eval_config["metrics"]["top_k_accuracy"]:
+    if eval_config["metrics"]["top_k_accuracy"] and len(all_probabilities) == len(predictions) and len(all_probabilities) > 0:
+        y_score = np.stack(all_probabilities, axis=0)
         for k in eval_config["metrics"]["top_k_accuracy"]:
-            results["metrics"][f"top_{k}_accuracy"] = compute_top_k_accuracy(predictions, targets, k)
+            results["metrics"][f"top_{k}_accuracy"] = compute_top_k_accuracy(y_score, targets, k)
     
     if eval_config["metrics"]["f1_score"]:
         results["metrics"]["f1_score"] = compute_f1_score(predictions, targets)

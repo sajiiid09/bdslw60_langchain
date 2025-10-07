@@ -1,0 +1,51 @@
+model:
+  name: "vivit_from_codes"
+  type: "transformer"
+  
+  # ViViT specific config
+  patch_size: 16
+  num_frames: 16
+  hidden_size: 768
+  num_hidden_layers: 12
+  num_attention_heads: 12
+  intermediate_size: 3072
+  hidden_act: "gelu"
+  hidden_dropout_prob: 0.0
+  attention_probs_dropout_prob: 0.0
+  initializer_range: 0.02
+  layer_norm_eps: 1e-12
+  
+  # Input processing
+  image_size: 224
+  
+  # Classification head
+  num_classes: 60  # BdSLW60 classes
+  classifier_dropout: 0.1
+  
+  # Adapter configuration
+  adapter_channels: 3
+  adapter_small_h: 8
+  adapter_small_w: 8
+
+training:
+  learning_rate: 1e-4
+  weight_decay: 0.05
+  batch_size: 8
+  num_epochs: 100
+  warmup_epochs: 10
+  gradient_clip_norm: 1.0
+  
+  # Data augmentation
+  mixup_alpha: 0.2
+  cutmix_alpha: 1.0
+  label_smoothing: 0.1
+  
+  # Optimizer
+  optimizer: "adamw"
+  betas: [0.9, 0.999]
+  eps: 1e-8
+  
+  # Scheduler
+  scheduler: "cosine"
+  min_lr: 1e-6
+
