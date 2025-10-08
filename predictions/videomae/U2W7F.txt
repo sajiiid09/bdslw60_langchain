@@ -1,0 +1,6 @@
+Video: U2W7F.npz
+Predicted Word: class_25
+Confidence: 0.9500
+Predicted Class: 25
+Source: src/data/videos/U2W7F.mp4
+Frames: 1932

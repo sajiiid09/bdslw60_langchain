@@ -1,0 +1,6 @@
+Video: U3W2F.npz
+Predicted Word: class_48
+Confidence: 0.9500
+Predicted Class: 48
+Source: src/data/videos/U3W2F.mp4
+Frames: 1194

@@ -1,0 +1,10 @@
+Video: U3W1F.npz
+Predicted Word: friend
+Confidence: 0.9500
+Predicted Class: 15
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U3W1F.mp4
+Frames: 923
+Sequence Length: 2000
+Important Frame: 588

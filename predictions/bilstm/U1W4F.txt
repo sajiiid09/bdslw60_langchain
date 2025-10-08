@@ -1,0 +1,10 @@
+Video: U1W4F.npz
+Predicted Word: this
+Confidence: 0.9500
+Predicted Class: 34
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W4F.mp4
+Frames: 1369
+Sequence Length: 2000
+Important Frame: 1369

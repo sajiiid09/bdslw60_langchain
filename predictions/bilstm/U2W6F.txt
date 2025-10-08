@@ -1,0 +1,10 @@
+Video: U2W6F.npz
+Predicted Word: drink
+Confidence: 0.9500
+Predicted Class: 11
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W6F.mp4
+Frames: 829
+Sequence Length: 2000
+Important Frame: 172

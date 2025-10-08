@@ -1,0 +1,83 @@
+{
+  "U10W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W10F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W2F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W3F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W4F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W5F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W6F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W7F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W8F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U1W9F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W10F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W2F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W3F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W4F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W5F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W6F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W7F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W8F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U2W9F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U3W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U3W2F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U4W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U4W2F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U5W1F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  },
+  "U5W2F.npz": {
+    "error": "'SimpleSignPredictor' object has no attribute 'predict_from_codes'"
+  }
+}

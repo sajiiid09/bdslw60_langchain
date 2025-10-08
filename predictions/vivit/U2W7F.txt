@@ -1,0 +1,8 @@
+Video: U2W7F.npz
+Predicted Word: week
+Confidence: 0.9500
+Predicted Class: 25
+Model: ViViT
+Source: src/data/videos/U2W7F.mp4
+Frames: 1932
+Processed Frames: 8

@@ -1,0 +1,8 @@
+Video: U1W4F.npz
+Predicted Word: yes
+Confidence: 0.9500
+Predicted Class: 3
+Model: ViViT
+Source: src/data/videos/U1W4F.mp4
+Frames: 1369
+Processed Frames: 8

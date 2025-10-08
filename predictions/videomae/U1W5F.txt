@@ -1,0 +1,6 @@
+Video: U1W5F.npz
+Predicted Word: class_50
+Confidence: 0.9500
+Predicted Class: 50
+Source: src/data/videos/U1W5F.mp4
+Frames: 1141

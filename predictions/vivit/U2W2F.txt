@@ -1,0 +1,8 @@
+Video: U2W2F.npz
+Predicted Word: work
+Confidence: 0.9500
+Predicted Class: 13
+Model: ViViT
+Source: src/data/videos/U2W2F.mp4
+Frames: 638
+Processed Frames: 8

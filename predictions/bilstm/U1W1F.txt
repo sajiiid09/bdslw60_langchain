@@ -1,0 +1,10 @@
+Video: U1W1F.npz
+Predicted Word: her
+Confidence: 0.9500
+Predicted Class: 45
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos\U1W1F.mp4
+Frames: 1378
+Sequence Length: 2000
+Important Frame: 11

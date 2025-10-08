@@ -1,0 +1,10 @@
+Video: U1W3F.npz
+Predicted Word: happy
+Confidence: 0.9500
+Predicted Class: 18
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W3F.mp4
+Frames: 1474
+Sequence Length: 2000
+Important Frame: 1474

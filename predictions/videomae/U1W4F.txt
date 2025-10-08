@@ -1,0 +1,6 @@
+Video: U1W4F.npz
+Predicted Word: class_44
+Confidence: 0.9500
+Predicted Class: 44
+Source: src/data/videos/U1W4F.mp4
+Frames: 1369

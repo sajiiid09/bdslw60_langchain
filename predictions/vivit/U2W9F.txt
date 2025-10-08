@@ -1,0 +1,8 @@
+Video: U2W9F.npz
+Predicted Word: day
+Confidence: 0.9500
+Predicted Class: 21
+Model: ViViT
+Source: src/data/videos/U2W9F.mp4
+Frames: 829
+Processed Frames: 8

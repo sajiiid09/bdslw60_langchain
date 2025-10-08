@@ -1,0 +1,6 @@
+Video: U4W1F.npz
+Predicted Word: water
+Confidence: 0.9500
+Predicted Class: 9
+Source: src/data/videos/U4W1F.mp4
+Frames: 621

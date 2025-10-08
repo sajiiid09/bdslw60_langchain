@@ -1,0 +1,10 @@
+Video: U1W7F.npz
+Predicted Word: home
+Confidence: 0.9500
+Predicted Class: 12
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W7F.mp4
+Frames: 1641
+Sequence Length: 2000
+Important Frame: 1641

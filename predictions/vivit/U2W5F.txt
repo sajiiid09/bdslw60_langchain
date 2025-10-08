@@ -1,0 +1,8 @@
+Video: U2W5F.npz
+Predicted Word: yes
+Confidence: 0.9500
+Predicted Class: 3
+Model: ViViT
+Source: src/data/videos/U2W5F.mp4
+Frames: 1588
+Processed Frames: 8

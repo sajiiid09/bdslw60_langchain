@@ -1,0 +1,6 @@
+Video: U3W1F.npz
+Predicted Word: class_33
+Confidence: 0.9500
+Predicted Class: 33
+Source: src/data/videos/U3W1F.mp4
+Frames: 923

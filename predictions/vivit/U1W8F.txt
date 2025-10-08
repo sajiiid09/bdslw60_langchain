@@ -1,0 +1,8 @@
+Video: U1W8F.npz
+Predicted Word: evening
+Confidence: 0.9500
+Predicted Class: 24
+Model: ViViT
+Source: src/data/videos/U1W8F.mp4
+Frames: 1589
+Processed Frames: 8

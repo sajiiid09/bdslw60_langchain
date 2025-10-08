@@ -1,0 +1,8 @@
+Video: U1W3F.npz
+Predicted Word: friend
+Confidence: 0.9500
+Predicted Class: 15
+Model: ViViT
+Source: src/data/videos/U1W3F.mp4
+Frames: 1474
+Processed Frames: 8

@@ -1,0 +1,10 @@
+Video: U2W1F.npz
+Predicted Word: have
+Confidence: 0.9500
+Predicted Class: 55
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W1F.mp4
+Frames: 792
+Sequence Length: 2000
+Important Frame: 634

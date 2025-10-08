@@ -1,0 +1,10 @@
+Video: U2W10F.npz
+Predicted Word: she
+Confidence: 0.9500
+Predicted Class: 39
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W10F.mp4
+Frames: 735
+Sequence Length: 2000
+Important Frame: 335

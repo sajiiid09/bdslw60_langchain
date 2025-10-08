@@ -1,0 +1,8 @@
+Video: U1W6F.npz
+Predicted Word: home
+Confidence: 0.9500
+Predicted Class: 12
+Model: ViViT
+Source: src/data/videos/U1W6F.mp4
+Frames: 1151
+Processed Frames: 8

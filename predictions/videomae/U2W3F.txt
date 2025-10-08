@@ -1,0 +1,6 @@
+Video: U2W3F.npz
+Predicted Word: class_55
+Confidence: 0.9500
+Predicted Class: 55
+Source: src/data/videos/U2W3F.mp4
+Frames: 791

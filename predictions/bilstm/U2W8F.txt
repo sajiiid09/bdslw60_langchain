@@ -1,0 +1,10 @@
+Video: U2W8F.npz
+Predicted Word: his
+Confidence: 0.9500
+Predicted Class: 44
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W8F.mp4
+Frames: 1099
+Sequence Length: 2000
+Important Frame: 1099

@@ -1,0 +1,8 @@
+Video: U5W1F.npz
+Predicted Word: please
+Confidence: 0.9500
+Predicted Class: 6
+Model: ViViT
+Source: src/data/videos/U5W1F.mp4
+Frames: 492
+Processed Frames: 8

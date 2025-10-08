@@ -1,0 +1,8 @@
+Video: U3W1F.npz
+Predicted Word: happy
+Confidence: 0.9500
+Predicted Class: 18
+Model: ViViT
+Source: src/data/videos/U3W1F.mp4
+Frames: 923
+Processed Frames: 8

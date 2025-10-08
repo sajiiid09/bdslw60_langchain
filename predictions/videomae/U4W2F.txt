@@ -1,0 +1,6 @@
+Video: U4W2F.npz
+Predicted Word: class_52
+Confidence: 0.9500
+Predicted Class: 52
+Source: src/data/videos/U4W2F.mp4
+Frames: 666

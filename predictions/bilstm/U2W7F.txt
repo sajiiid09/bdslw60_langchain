@@ -1,0 +1,10 @@
+Video: U2W7F.npz
+Predicted Word: were
+Confidence: 0.9500
+Predicted Class: 52
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W7F.mp4
+Frames: 1932
+Sequence Length: 2000
+Important Frame: 1932

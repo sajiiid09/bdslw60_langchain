@@ -1,0 +1,10 @@
+Video: U5W2F.npz
+Predicted Word: this
+Confidence: 0.9500
+Predicted Class: 34
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U5W2F.mp4
+Frames: 450
+Sequence Length: 2000
+Important Frame: 343

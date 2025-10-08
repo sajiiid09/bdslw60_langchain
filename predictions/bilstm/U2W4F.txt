@@ -1,0 +1,10 @@
+Video: U2W4F.npz
+Predicted Word: week
+Confidence: 0.9500
+Predicted Class: 25
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W4F.mp4
+Frames: 1040
+Sequence Length: 2000
+Important Frame: 423

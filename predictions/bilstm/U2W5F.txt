@@ -1,0 +1,10 @@
+Video: U2W5F.npz
+Predicted Word: month
+Confidence: 0.9500
+Predicted Class: 26
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W5F.mp4
+Frames: 1588
+Sequence Length: 2000
+Important Frame: 1588

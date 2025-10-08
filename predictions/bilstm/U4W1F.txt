@@ -1,0 +1,10 @@
+Video: U4W1F.npz
+Predicted Word: does
+Confidence: 0.9500
+Predicted Class: 59
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U4W1F.mp4
+Frames: 621
+Sequence Length: 2000
+Important Frame: 224

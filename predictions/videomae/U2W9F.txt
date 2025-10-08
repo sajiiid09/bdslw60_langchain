@@ -1,0 +1,6 @@
+Video: U2W9F.npz
+Predicted Word: class_14
+Confidence: 0.9500
+Predicted Class: 14
+Source: src/data/videos/U2W9F.mp4
+Frames: 829

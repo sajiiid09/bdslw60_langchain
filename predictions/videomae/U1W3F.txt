@@ -1,0 +1,6 @@
+Video: U1W3F.npz
+Predicted Word: class_37
+Confidence: 0.9500
+Predicted Class: 37
+Source: src/data/videos/U1W3F.mp4
+Frames: 1474

@@ -1,0 +1,10 @@
+Video: U10W1F.npz
+Predicted Word: please
+Confidence: 0.9500
+Predicted Class: 6
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos\U10W1F.mp4
+Frames: 954
+Sequence Length: 2000
+Important Frame: 632

@@ -1,0 +1,6 @@
+Video: U2W10F.npz
+Predicted Word: class_27
+Confidence: 0.9500
+Predicted Class: 27
+Source: src/data/videos/U2W10F.mp4
+Frames: 735

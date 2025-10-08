@@ -1,0 +1,6 @@
+Video: U1W10F.npz
+Predicted Word: class_41
+Confidence: 0.9500
+Predicted Class: 41
+Source: src/data/videos/U1W10F.mp4
+Frames: 1243

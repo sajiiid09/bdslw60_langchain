@@ -1,0 +1,6 @@
+Video: U5W2F.npz
+Predicted Word: thank
+Confidence: 0.9500
+Predicted Class: 5
+Source: src/data/videos/U5W2F.mp4
+Frames: 450

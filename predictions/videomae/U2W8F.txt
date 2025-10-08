@@ -1,0 +1,6 @@
+Video: U2W8F.npz
+Predicted Word: class_29
+Confidence: 0.9500
+Predicted Class: 29
+Source: src/data/videos/U2W8F.mp4
+Frames: 1099

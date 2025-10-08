@@ -1,0 +1,8 @@
+Video: U1W7F.npz
+Predicted Word: school
+Confidence: 0.9500
+Predicted Class: 14
+Model: ViViT
+Source: src/data/videos/U1W7F.mp4
+Frames: 1641
+Processed Frames: 8

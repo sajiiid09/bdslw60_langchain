@@ -1,0 +1,8 @@
+Video: U4W2F.npz
+Predicted Word: thank
+Confidence: 0.9500
+Predicted Class: 5
+Model: ViViT
+Source: src/data/videos/U4W2F.mp4
+Frames: 666
+Processed Frames: 8

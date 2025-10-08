@@ -1,0 +1,222 @@
+{
+  "model_type": "bilstm_optimized",
+  "total_files": 27,
+  "predictions": [
+    {
+      "file": "U10W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W10F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W2F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W3F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W4F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W5F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W6F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W7F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W8F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U1W9F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W10F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W2F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W3F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W4F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W5F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W6F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W7F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W8F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U2W9F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U3W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U3W2F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U4W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U4W2F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U5W1F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    },
+    {
+      "file": "U5W2F",
+      "predicted_class": 0,
+      "confidence": 1.0,
+      "probabilities": [
+        1.0
+      ]
+    }
+  ]
+}

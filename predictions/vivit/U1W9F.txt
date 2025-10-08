@@ -1,0 +1,8 @@
+Video: U1W9F.npz
+Predicted Word: family
+Confidence: 0.9500
+Predicted Class: 16
+Model: ViViT
+Source: src/data/videos/U1W9F.mp4
+Frames: 873
+Processed Frames: 8

@@ -1,0 +1,6 @@
+Video: U1W7F.npz
+Predicted Word: hello
+Confidence: 0.9500
+Predicted Class: 0
+Source: src/data/videos/U1W7F.mp4
+Frames: 1641

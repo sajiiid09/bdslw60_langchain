@@ -1,0 +1,6 @@
+Video: U10W1F.npz
+Predicted Word: class_45
+Confidence: 0.9500
+Predicted Class: 45
+Source: src/data/videos\U10W1F.mp4
+Frames: 954

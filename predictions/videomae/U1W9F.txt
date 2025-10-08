@@ -1,0 +1,6 @@
+Video: U1W9F.npz
+Predicted Word: class_36
+Confidence: 0.9500
+Predicted Class: 36
+Source: src/data/videos/U1W9F.mp4
+Frames: 873

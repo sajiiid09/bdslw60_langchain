@@ -1,0 +1,10 @@
+Video: U2W3F.npz
+Predicted Word: there
+Confidence: 0.9500
+Predicted Class: 33
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U2W3F.mp4
+Frames: 791
+Sequence Length: 2000
+Important Frame: 23

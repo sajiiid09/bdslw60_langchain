@@ -1,0 +1,10 @@
+Video: U3W2F.npz
+Predicted Word: been
+Confidence: 0.9500
+Predicted Class: 54
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U3W2F.mp4
+Frames: 1194
+Sequence Length: 2000
+Important Frame: 1194

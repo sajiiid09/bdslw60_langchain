@@ -1,0 +1,10 @@
+Video: U1W5F.npz
+Predicted Word: help
+Confidence: 0.9500
+Predicted Class: 8
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W5F.mp4
+Frames: 1141
+Sequence Length: 2000
+Important Frame: 1141

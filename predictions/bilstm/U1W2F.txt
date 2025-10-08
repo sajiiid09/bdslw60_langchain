@@ -1,0 +1,10 @@
+Video: U1W2F.npz
+Predicted Word: time
+Confidence: 0.9500
+Predicted Class: 20
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W2F.mp4
+Frames: 1716
+Sequence Length: 2000
+Important Frame: 1716

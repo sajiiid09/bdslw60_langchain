@@ -1,0 +1,6 @@
+Video: U2W5F.npz
+Predicted Word: class_34
+Confidence: 0.9500
+Predicted Class: 34
+Source: src/data/videos/U2W5F.mp4
+Frames: 1588

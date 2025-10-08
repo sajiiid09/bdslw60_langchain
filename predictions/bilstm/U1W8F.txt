@@ -1,0 +1,10 @@
+Video: U1W8F.npz
+Predicted Word: that
+Confidence: 0.9500
+Predicted Class: 35
+Model: BiLSTM+Attention
+Input Size: 1629
+Source: src/data/videos/U1W8F.mp4
+Frames: 1589
+Sequence Length: 2000
+Important Frame: 1589

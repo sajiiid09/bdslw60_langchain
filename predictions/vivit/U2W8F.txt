@@ -1,0 +1,8 @@
+Video: U2W8F.npz
+Predicted Word: home
+Confidence: 0.9500
+Predicted Class: 12
+Model: ViViT
+Source: src/data/videos/U2W8F.mp4
+Frames: 1099
+Processed Frames: 8

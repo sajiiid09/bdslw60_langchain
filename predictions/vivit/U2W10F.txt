@@ -1,0 +1,8 @@
+Video: U2W10F.npz
+Predicted Word: sad
+Confidence: 0.9500
+Predicted Class: 19
+Model: ViViT
+Source: src/data/videos/U2W10F.mp4
+Frames: 735
+Processed Frames: 8

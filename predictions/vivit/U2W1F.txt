@@ -1,0 +1,8 @@
+Video: U2W1F.npz
+Predicted Word: month
+Confidence: 0.9500
+Predicted Class: 26
+Model: ViViT
+Source: src/data/videos/U2W1F.mp4
+Frames: 792
+Processed Frames: 8
